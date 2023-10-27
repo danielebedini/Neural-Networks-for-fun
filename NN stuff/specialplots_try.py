@@ -4,7 +4,8 @@ from mpl_toolkits.mplot3d import Axes3D
 from sklearn.datasets import make_classification
 
 # Genera un set di dati non linearmente separabile con 4 feature
-X, y = make_classification(n_samples=1000, n_features=4, n_classes=2, n_clusters_per_class=1, n_redundant=0, random_state=42)
+X, y = make_classification(n_samples=30, n_features=4, n_classes=2, n_clusters_per_class=1, n_redundant=0, random_state=42)
+X_test,y_test = make_classification(n_samples=10, n_features=4, n_classes=2, n_clusters_per_class=1, n_redundant=0, random_state=42)
 
 # Crea una figura 3D
 fig = plt.figure()

@@ -72,7 +72,6 @@ model.fit(X,y, epochs=50, verbose=0)
 
 # Utilizza questo comando per fare previsioni utilizzando il modello addestrato. 
 # Passa i dati di input (X) e otterrai le previsioni corrispondenti
-
 model.predict(X_test)
 
 # Questo comando valuta le prestazioni del modello utilizzando dati di test. 

@@ -17,4 +17,18 @@ np.random.shuffle(data)
 X = data[:, :-1]  # Feature
 y = data[:, -1]   # Etichette di classe
 
+
 # Ora hai i dati di addestramento (X) e le etichette di classe (y) pronte per l'addestramento.
+
+# Dati di test
+
+data_test = np.array([
+    [0.5, 0.2, 0.1, 0.2, 0],  # Esempio 1 con etichetta di classe 0
+    [0.4, 0.5, 0.3, 0.3, 0],  # Esempio 2 con etichetta di classe 0
+    [0.1, 0.6, 0.6, 0.8, 1],  # Esempio 3 con etichetta di classe 1
+    [0.2, 0.3, 0.5, 0.1, 1],  # Esempio 4 con etichetta di classe 1
+    # Aggiungi altri esempi con le relative etichette di classe
+])
+
+X_test = data[:, :-1]  # Feature
+y_test = data[:, -1]   # Etichette di classe
