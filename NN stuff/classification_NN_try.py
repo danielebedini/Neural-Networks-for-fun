@@ -7,7 +7,7 @@ from tensorflow.keras import layers
 #from makemoons_try import X,y
 #from moref_try import X,y
 #from specialplots_try import X,y
-from regression_try import X,y
+from regression_try2 import X,y
 
 # Crea il modello della rete neurale
 model = keras.Sequential()
@@ -55,3 +55,12 @@ model.summary()
 
 # Comando per fittare i dati di input X con gli output y dei vari file
 model.fit(X,y, epochs=50)
+
+# Utilizza questo comando per fare previsioni utilizzando il modello addestrato. 
+# Passa i dati di input (X) e otterrai le previsioni corrispondenti
+model.predict(X)
+
+# Questo comando valuta le prestazioni del modello utilizzando dati di test. 
+# Devi specificare i dati di input (X) e i target di test (y). 
+# Restituisce i valori della funzione di perdita e delle metriche specificate durante la compilazione.
+model.evaluate(X,y) 
