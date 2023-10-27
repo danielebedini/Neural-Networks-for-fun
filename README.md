@@ -1,4 +1,4 @@
-# Neural-Networks-for-fun
+# Neural Networks for fun
 A little project for having fun with neural networks, both for classification and regression problems.
 
 ### Executing procedure
