@@ -46,7 +46,7 @@ model.add(layers.Dense(1, activation='selu'))
 
 custom_optimizer = Adam(learning_rate=0.001)
 
-model.compile(loss='mean_squared_error', optimizer=custom_optimizer, metrics=['mae', 'mse'])
+model.compile(loss='mean_squared_error', optimizer=custom_optimizer, metrics=['mae', 'mse', 'accuracy'])
 
 # Comandi possibili nel compile:
 ''' 
@@ -102,4 +102,22 @@ model.predict(X_test)
 print("---------------")
 print("Evaluation")
 print("---------------")
-model.evaluate(X_test,y_test) 
+
+# model.evaluate(X_test, y_test) 
+
+
+# Chiamata a model.evaluate per ottenere la perdita e le metriche
+results = model.evaluate(X_test, y_test, verbose=0)
+
+# Estrai la perdita e l'accuratezza dai risultati
+loss = results[0]
+accuracy = results[1]
+
+# Formattare l'accuratezza con due cifre decimali come percentuale
+formatted_accuracy = "{:.2%}".format(accuracy)
+formatted_loss = "{:.4f}".format(loss)
+
+# Stampare la perdita e l'accuratezza formattate
+print("Loss:", formatted_loss)
+print("Accuracy:", formatted_accuracy)
+
