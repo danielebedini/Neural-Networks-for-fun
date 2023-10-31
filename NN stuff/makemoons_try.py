@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_moons
 
 # Genera un set di dati non linearmente separabili a forma di luna
-X, y = make_moons(n_samples=100, noise=0.2, random_state=50)
-X_test,y_test = make_moons(n_samples=30, noise=0.4, random_state=50)
+X, y = make_moons(n_samples=200, noise=0.2, random_state=50)
+X_test,y_test = make_moons(n_samples=50, noise=0.2, random_state=50)
 
 # Visualizza il set di dati
 plt.scatter(X[y == 0][:, 0], X[y == 0][:, 1], label="Classe 0", marker='o')

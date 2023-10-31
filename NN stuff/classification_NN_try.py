@@ -97,15 +97,6 @@ plt.legend()
 plt.show()
 '''
 
-# Questo comando valuta le prestazioni del modello utilizzando dati di test. 
-# Devi specificare i dati di input (X) e i target di test (y). 
-# Restituisce i valori della funzione di perdita e delle metriche specificate durante la compilazione.
-
-# model.evaluate(X_test,y_test) 
-
-# loss, accuracy = model.evaluate(X_test, y_test)
-# print(f'Funzione di Perdita: {loss:.4f}')
-# print(f'Accuratezza: {accuracy * 100:.2f}%')
 
 # Lista per memorizzare i valori dell'errore durante l'addestramento
 loss_history = []
@@ -124,3 +115,17 @@ plt.title('Andamento dell\'errore durante l\'addestramento')
 plt.xlabel('Epoca')
 plt.ylabel('Errore')
 plt.show()
+
+# Questo comando valuta le prestazioni del modello utilizzando dati di test. 
+# Devi specificare i dati di input (X) e i target di test (y). 
+# Restituisce i valori della funzione di perdita e delle metriche specificate durante la compilazione.
+
+print("---------------")
+print("Evaluation")
+print("---------------")
+
+model.evaluate(X_test,y_test) 
+
+loss, accuracy = model.evaluate(X_test, y_test)
+print(f'Funzione di Perdita: {loss:.4f}')
+print(f'Accuratezza: {accuracy * 100:.2f}%')

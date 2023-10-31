@@ -1,5 +1,6 @@
 # Importa le librerie necessarie
 import tensorflow as tf
+import matplotlib.pyplot as plt
 from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.initializers import RandomUniform
@@ -68,13 +69,37 @@ model.compile(
 model.summary()
 
 # Comando per fittare i dati di input X con gli output y dei vari file
-model.fit(X,y, epochs=50, verbose=0)
+# model.fit(X,y, epochs=50, verbose=0)
+
+# Lista per memorizzare i valori dell'errore durante l'addestramento
+loss_history = []
+
+# Addestramento della rete
+for epoch in range(50):
+    #history = model.fit(data, data, epochs=1, batch_size=32, verbose=0)
+    history = model.fit(X,y, epochs = 1, verbose = 0)
+    loss = history.history['loss'][0]
+    loss_history.append(loss)
+    print(f'Epoch {epoch + 1}/{50} - Loss: {loss}')
+
+# Ora il modello è addestrato e puoi tracciare l'andamento dell'errore
+plt.plot(loss_history)
+plt.title('Andamento dell\'errore durante l\'addestramento')
+plt.xlabel('Epoca')
+plt.ylabel('Errore')
+plt.show()
 
 # Utilizza questo comando per fare previsioni utilizzando il modello addestrato. 
 # Passa i dati di input (X) e otterrai le previsioni corrispondenti
+print("---------------")
+print("Prediction")
+print("---------------")
 model.predict(X_test)
 
 # Questo comando valuta le prestazioni del modello utilizzando dati di test. 
 # Devi specificare i dati di input (X) e i target di test (y). 
 # Restituisce i valori della funzione di perdita e delle metriche specificate durante la compilazione.
+print("---------------")
+print("Evaluation")
+print("---------------")
 model.evaluate(X_test,y_test) 
