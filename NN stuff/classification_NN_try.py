@@ -124,3 +124,5 @@ plt.title('Andamento dell\'errore durante l\'addestramento')
 plt.xlabel('Epoca')
 plt.ylabel('Errore')
 plt.show()
+
+# comment for github
