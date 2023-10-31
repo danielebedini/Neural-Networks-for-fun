@@ -52,7 +52,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 model.summary()
 
 # Comando per fittare i dati di input X con gli output y dei vari file
-model.fit(X,y, epochs = 50, verbose = 0)
+# model.fit(X,y, epochs = 50, verbose = 0)
 
 # Predict
 
@@ -103,7 +103,24 @@ plt.show()
 
 # model.evaluate(X_test,y_test) 
 
-loss, accuracy = model.evaluate(X_test, y_test)
-print(f'Funzione di Perdita: {loss:.4f}')
-print(f'Accuratezza: {accuracy * 100:.2f}%')
+# loss, accuracy = model.evaluate(X_test, y_test)
+# print(f'Funzione di Perdita: {loss:.4f}')
+# print(f'Accuratezza: {accuracy * 100:.2f}%')
 
+# Lista per memorizzare i valori dell'errore durante l'addestramento
+loss_history = []
+
+# Addestramento della rete
+for epoch in range(50):
+    #history = model.fit(data, data, epochs=1, batch_size=32, verbose=0)
+    history = model.fit(X,y, epochs = 1, verbose = 0)
+    loss = history.history['loss'][0]
+    loss_history.append(loss)
+    print(f'Epoch {epoch + 1}/{50} - Loss: {loss}')
+
+# Ora il modello è addestrato e puoi tracciare l'andamento dell'errore
+plt.plot(loss_history)
+plt.title('Andamento dell\'errore durante l\'addestramento')
+plt.xlabel('Epoca')
+plt.ylabel('Errore')
+plt.show()
